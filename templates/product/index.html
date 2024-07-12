@@ -1,0 +1,35 @@
+{% extends '../layouts/base.html' %}
+
+<!-- Title -->
+{% block title %}
+OnlyFlans | Productos
+{% endblock %}
+
+<!-- content -->
+{% block content %}
+<h1 class="text-center py-4">Listado de productos</h1>
+
+<div class="container-fluid ">
+    <div class="row">
+
+        {% for product in products  %}
+
+        <div class="col-md-4 ">
+                            
+            <!-- estructura card -->
+            <div class="card" style="width: 18rem;">
+                <img src="{{ product.image_url }}" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                    <h5 class="card-title "> <strong>{{ product.name}} </strong></h5> 
+                    <p class="card-title "> <strong>{{ product.description}} </strong></p> 
+                    <p class="card-text "> <strong>PRECIO :</strong> {{ product.price }}</p>
+                    <p class="card-text "> <strong>STOCK :</strong> {{ product.stock }}</p>
+                    <a href="#" class="btn btn-primary">Comprar</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+{% endblock %}

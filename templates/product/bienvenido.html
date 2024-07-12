@@ -1,0 +1,55 @@
+
+{% extends '../layouts/base.html' %}
+
+<!-- Title -->
+{% block title %}
+OnlyFlans | Productos Ofertas
+{% endblock %}
+
+<!-- content -->
+{% block content %}
+
+<div>
+    <main class="container-fluid">
+        <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
+            <div class="col-md-6 px-0">
+                <h1 class="display-4 fst-italic">
+                    {% if user %}
+        <p>Bienvenido, {{ user.username }}!</p>
+    {% else %}
+        <p>Bienvenido, invitado!</p>
+    {% endif %}
+                </h1>
+                
+                <p class="lead my-3">Tenemos una lista de productos exclusivos para ti. Quieres conocer mas?.</p>
+                <p class="lead mb-0"><a href="#" class="text-white fw-bold">Contáctenos</a></p>
+            </div>
+        </div>
+    </main>    
+</div>
+<h1 class="text-center py-4">Listado de productos | OFERTAS!</h1>
+
+<div class="container-fluid ">
+    <div class="row">
+
+        {% for product in products  %}
+
+        <div class="col-md-4 ">
+                            
+            <!-- estructura card -->
+            <div class="card" style="width: 18rem;">
+                <img src="{{ product.image_url }}" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                    <h5 class="card-title "> <strong>{{ product.name}} </strong></h5> 
+                    <p class="card-title "> <strong>{{ product.description}} </strong></p> 
+                    <p class="card-text "> <strong>PRECIO :</strong> {{ product.price }}</p>
+                    <p class="card-text "> <strong>STOCK :</strong> {{ product.stock }}</p>
+                    <a href="#" class="btn btn-primary">Comprar</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+{% endblock %}
