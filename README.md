@@ -1,4 +1,4 @@
 ### Desafio hito 4
 
-# Error en mostrar productos al ingresar usuario
-## Error comun en la plantilla html Bienvenido
+# se actualizo y modifico url y views mas html de bienvenido
+## Hito 4 compeltado
