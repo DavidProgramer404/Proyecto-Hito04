@@ -127,7 +127,7 @@ STATICFILES_DIRS = [
 
 # Redirect to home URL after login (Default redirects to /accounts/profile/)
 LOGIN_REDIRECT_URL = 'bienvenido'
-LOGOUT_REDIRECT_URL = 'inicio'
+LOGOUT_REDIRECT_URL = 'index'
 
 
 # Default primary key field type

@@ -4,6 +4,10 @@ from .models import Product
 # import autenticacion
 from django.contrib.auth.decorators import login_required
 
+from django.contrib.auth import logout
+from django.contrib import messages
+from django.shortcuts import redirect
+
 # Create your views here.
 
 # Metodo
@@ -27,3 +31,24 @@ def sale(request):
     context = {'products': products,}
     return render(request, 'product/sale.html',context)
 
+
+def productos_ofertas(request):
+    products = Product.objects.all()  # Query para obtener todos los productos
+    context = {
+        'products': products
+    }
+    return render(request, 'productos_ofertas.html', context)
+
+
+def custom_logout(request):
+    logout(request)
+    messages.success(request, 'Has cerrado sesión.')
+    return redirect('registration/logout')
+
+
+def bienvenido(request):
+    products = Product.objects.all()  # Query para obtener todos los productos
+    context = {
+        'products': products
+    }
+    return render(request, 'product/bienvenido.html', context)
