@@ -32,8 +32,6 @@ urlpatterns = [
     path('products/', include('web.urls')),
     
 
-    
-
     # autenticacion
     path('accounts/', include('django.contrib.auth.urls')),
 
